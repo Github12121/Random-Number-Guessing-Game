@@ -6,27 +6,21 @@
 </head>
 <body>
 <script>
-    //var Hola=1;
-    //alert(Hola);
-    //Hola = Hola + 1;
-    //alert(Hola);
-    var Hola = 1;
-    while (Hola <= 5) {
-        alert('Hola Hello Bonjour: ' + Hola);
-        Hola = Hola + 1;
-    }
-
+    const MAX = 10;
+    alert('You have ten guesses!');
     var randomNumber = Math.floor(Math.random() * 100) + 1;
-    alert(randomNumber);
-    var GuessaNumber = prompt('Guess a Number');
-    alert(GuessaNumber);
-
-    if (GuessaNumber == randomNumber) {
-        alert('You may be eligible for a prize of $500 if you are not a robot.');
+    var guessCount = 0;
+    while(guessaNumber != randomNumber && guessCount <MAX) {
+        var guessaNumber = prompt('Guess a Number');
+        guessCount = guessCount+1;
+        if (guessaNumber == randomNumber) {
+            alert('You unfortunately may have just won !');
+        } else {
+            var guessesLeft = MAX - guessCount;
+            alert('Try again! You have '+ guessesLeft +' guesses left.');
+        }
     }
-    if (GuessaNumber != randomNumber) {
-        alert('Your credit card number was not proven to be stolen and that means the $500 is just out of reach.');
-    }
+    alert ('you made ' + guessCount + ' guesses ')
 </script>
 </body>
 </html>
