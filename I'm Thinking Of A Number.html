@@ -20,6 +20,7 @@
     while(guessaNumber != randomNumber && guessCount <MAX) {
         var guessaNumber = prompt('Guess a Number');
         guessCount = guessCount+1;
+        if (guessCount == 1) {
         if (randomNumber < 50) {
             alert('Goodness! The number is lower than 50!');
         } 
@@ -49,6 +50,7 @@
         }
         if (randomNumber > 90) {
             alert('The number is over 90');
+        }
         }
         if (guessaNumber == randomNumber) {
             alert('You unfortunately may have just won !');
