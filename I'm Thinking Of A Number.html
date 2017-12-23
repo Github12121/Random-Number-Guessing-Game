@@ -65,11 +65,25 @@
     alert ('You made ' + guessCount + ' guesses! ')
     alert (' The number is ' + randomNumber + '! ');
     if (guessCount < 10) {
-        alert ('YOU WON!!! Reload this page for more luck! Confidential Information: The code is T3xtGu3ssPl4y0r');
+        alert ('YOU WON!!! Reload this page for more luck! Confidential Information: The code is T3xtGu3ssPl4y3r');
     }
     if (guessCount >= MAX) {
-        alert ('You need better luck. Reload this page to play again.');
+        alert ('You need better luck. Reload this page to play again unless you want to play round two. Please remember "digitext"');
     }
+    const MAXNUMBER = 10;
+    alert('You have ten guesses!');
+    alert('The number is from 1-100!');
+    var randomNumber2 = Math.floor(Math.random() * 100) + 1;
+    var guessCount2 = 0;
+    while(guessaNumber2 != randomNumber2 && guessCount2 <MAXNUMBER) {
+        var guessaNumber2 = prompt('Guess a Number');
+        guessCount2 = guessCount2+1
+        if (guessaNumber == randomNumber) {
+            alert('You unfortunately may have just won !');
+        } else {
+            var guessesLeft = MAX - guessCount;
+            alert('Try again! You have '+ guessesLeft +' guesses left.');
+        }
 </script>       
     <h1>
         TextGuess
