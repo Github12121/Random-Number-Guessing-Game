@@ -42,7 +42,7 @@
             alert('Too little! It\'s more than the number you may have imagined.');
           }
           if (guessaNumber == randomNumber) {
-              alert('You unfortunately may have just won !');
+              alert('You have just won !');
           } else {
               var guessesLeft = MAX - guessCount;
               alert('Try again! You have '+ guessesLeft +' guesses left.');
@@ -60,7 +60,7 @@
           }
       }
       if (guessCount >= MAX) {
-          alert ('You need better luck. Reload this page to play again. Remember, the code will give you five NumberCoins');
+          alert ('You need better luck. Remember, the code will give you five NumberCoins');
       }
     } while(confirm('Do you want to play again?'));
 
