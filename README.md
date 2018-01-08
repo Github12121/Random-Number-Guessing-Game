@@ -1,3 +1,2 @@
 # Random-Number-Guessing-Game
-Random number. Random number! Random Number! RANDOM Number!! RANDOM NUMBER!!!
-Where random numbers meet digital.
+The currencies added to this game are useful for winning this game.
