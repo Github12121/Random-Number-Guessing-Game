@@ -20,64 +20,77 @@
          body {
              background-color: #00FFFF;
          }
+         h4 {
+             text-align: center;
+             display: none;
+
+         }
     </style>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function() {
+            const MAX = 10;
+            var millicoin = 0;
+            do {
+                document.getElementById('you-won').style.display= "none";
+                var code = Math.random().toString(36).substring(7);
+                var randomNumber = Math.floor(Math.random() * 100) + 1;
+                var guessCount = 0;
+                alert('You have ten guesses!');
+                alert('The number is from 1-100!');
+                while (guessaNumber != randomNumber && guessCount < MAX) {
+                    var guessaNumber = prompt('Guess a Number');
+                    guessCount = guessCount + 1;
+                    if (guessaNumber > randomNumber) {
+                        alert('Too high! It\'s less than the number you have guessed.');
+                    }
+                    if (guessaNumber < randomNumber) {
+                        alert('Too little! It\'s more than the number you may have imagined.');
+                    }
+                    if (guessaNumber == randomNumber) {
+                        document.getElementById('you-won').style.display = 'block';
+                        alert('You have just won !');
+                    } else {
+                        var guessesLeft = MAX - guessCount;
+                        alert('Try again! You have ' + guessesLeft + ' guesses left.');
+                    }
+                }
+                alert('You made ' + guessCount + ' guesses! ')
+                alert(' The number is ' + randomNumber + '! ');
+                if (guessCount < MAX) {
+                    alert('YOU WON!!! Here is your millicoin code: ' + code);
+                    if (confirm('Do you have a millicoin code?')) {
+                        if (prompt('Enter your millicoin code here.')) {
+                            millicoin = millicoin + 100;
+                            alert('You have ' + millicoin + ' millicoin(s).');
+                        }
+                    }
+                }
+                if (guessCount >= MAX) {
+                    alert('You need better luck. Remember, the code will give you five NumberCoins');
+                }
+            } while (confirm('Do you want to play again?'));
+        });
+    </script>
 </head>
 <body>
-<script>
-    const MAX = 10;
-    var millicoin = 0;
-    do {
-      var code = Math.random().toString(36).substring(7);
-      var randomNumber = Math.floor(Math.random() * 100) + 1;
-      var guessCount = 0;
-      alert('You have ten guesses!');
-      alert('The number is from 1-100!');
-      while(guessaNumber != randomNumber && guessCount <MAX) {
-          var guessaNumber = prompt('Guess a Number');
-          guessCount = guessCount+1;
-          if (guessaNumber > randomNumber) {
-            alert('Too high! It\'s less than the number you have guessed.');
-          }
-          if (guessaNumber < randomNumber) {
-            alert('Too little! It\'s more than the number you may have imagined.');
-          }
-          if (guessaNumber == randomNumber) {
-              alert('You have just won !');
-          } else {
-              var guessesLeft = MAX - guessCount;
-              alert('Try again! You have '+ guessesLeft +' guesses left.');
-          }
-      }
-      alert ('You made ' + guessCount + ' guesses! ')
-      alert (' The number is ' + randomNumber + '! ');
-      if (guessCount < MAX) {
-          alert ('YOU WON!!! Here is your millicoin code: ' + code);
-          if (confirm('Do you have a millicoin code?')) {
-           if (prompt ('Enter your millicoin code here.')) {
-             millicoin = millicoin + 100;
-             alert ('You have '+millicoin+' millicoin(s).');
-           }
-          }
-      }
-      if (guessCount >= MAX) {
-          alert ('You need better luck. Remember, the code will give you five NumberCoins');
-      }
-    } while(confirm('Do you want to play again?'));
-
-</script>       
-    <h1>
-        TextGuess
-    </h1>
-    </br>
-    <h2>
-        Guess the number. Reimagined.
-    </h2>
-    <p>
-    Use one coin to automatically win a game. 
-        One coin is earned after 10 wins.
+<h1>
+    TextGuess
+</h1>
+</br>
+<h2>
+    Guess the number. Reimagined.
+</h2>
+<p>
+    Use one coin to automatically win a game.
+    One coin is earned after 10 wins.
     A millicoin is equal to 1/10 of a coin.</p>
-    <p> If you win ten times you can use a coin
-        to automatically win a game and recieve 
-        100 millicoins back.
+<p> If you win ten times you can use a coin
+    to automatically win a game and recieve
+    100 millicoins back.</p> <h4 id="you-won">You Won! <img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=
+    images&cd=&ved=2ahUKEwiqh7aMrtPYAhXL1IMKHcgsC7QQjBx6BAgAEAM&url=https%3A%2F%2Fpng.pngtree.com%2Felement_pic%2F00%2F0
+    0%2F00%2F00569a3b6797286.jpg&psig=AOvVaw0ozOO8BvqVi7JF2wNiI6ML&ust=1515878626969089"></h4>
 </body>
 </html>
