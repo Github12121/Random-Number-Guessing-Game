@@ -57,13 +57,16 @@
                         alert('Try again! You have ' + guessesLeft + ' guesses left.');
                     }
                 }
-                alert('You made ' + guessCount + ' guesses! ')
+                alert('You made ' + guessCount + ' guesses! ');
                 alert(' The number is ' + randomNumber + '! ');
                 if (guessCount < MAX) {
                     alert('YOU WON!!! Here is your millicoin code: ' + code);
                     if (confirm('Do you have a millicoin code?')) {
-                        if (prompt('Enter your millicoin code here.')) {
+                        var enteredCode;
+                        enteredCode = prompt('Enter your millicoin code here.');
+                        if (code == enteredCode){
                             millicoin = millicoin + 100;
+                            document.getElementById('millicoins').innerHTML = millicoin;
                             alert('You have ' + millicoin + ' millicoin(s).');
                         }
                     }
@@ -76,6 +79,11 @@
     </script>
 </head>
 <body>
+<h1 id="you-won">
+    <img src="https://cdn.trophystore.co.uk/Img/Dynamic/Product/A1640.jpg?w=800&h=600"/>
+<br/>
+    You Won!
+</h1>
 <h1>
     TextGuess
 </h1>
@@ -89,10 +97,7 @@
     A millicoin is equal to 1/10 of a coin.</p>
 <p> If you win ten times you can use a coin
     to automatically win a game and recieve
-    100 millicoins back.</p> <h4 id="you-won">You Won! <img src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=
-    images&cd=&ved=2ahUKEwiqh7aMrtPYAhXL1IMKHcgsC7QQjBx6BAgAEAM&url=https%3A%2F%2Fpng.pngtree.com%2Felement_pic%2F00%2F0
-    0%2F00%2F00569a3b6797286.jpg&psig=AOvVaw0ozOO8BvqVi7JF2wNiI6ML&ust=1515878626969089"></h4>
-    // Code Not Working Here.
-    <h2> You have ' + millicoin + ' millicoin(s)!</h2>
+    100 millicoins back.</p>
+    <h2> You have <span id="millicoins">0</span> millicoin(s)!</h2>
 </body>
 </html>
